@@ -1,0 +1,8 @@
+%% Tell emacs to use -*- erlang -*- mode for this file
+{application,
+ eunit_addons,
+ [{description,"Addons for eunit"},
+  {vsn,"0.1"},
+  {registered,[]},
+  {applications,[kernel, stdlib]},
+  {env,[]}]}.
