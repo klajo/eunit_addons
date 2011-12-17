@@ -39,6 +39,8 @@ name) to the eunit printout.
 
 * They make it easy to set timeouts for test cases.
 
+* The tests get isolated from each other.
+
 
 
 
@@ -50,6 +52,10 @@ test module itself.  However, the version of the macro which
 has the `Tests` parameter might be useful when there are         
 different groups of tests in one module which require         
 different setup.
+
+
+
+The `{spawn,Test}` feature of eunit is used to achieve test isoloation.
 
 
 
