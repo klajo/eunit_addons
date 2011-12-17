@@ -61,3 +61,8 @@ with_setup_1_test(foo) ->
 with_setup_2_test(foo) ->
     ok.
 
+test_case_isolation_1_test(_) ->
+    put(a, dummy).
+
+test_case_isolation_2_test(_) ->
+    undefined = get(a).

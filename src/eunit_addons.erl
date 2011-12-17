@@ -54,6 +54,7 @@
 %%%     <li>They provide readable test names (same as the function
 %%%         name) to the eunit printout.</li>
 %%%     <li>They make it easy to set timeouts for test cases.</li>
+%%%     <li>The tests gets isolated from each other.</li>
 %%% </ul>
 %%%
 %%% NOTE: Use one of the ?WITH_SETUP macros with fewer parameters (if
@@ -63,6 +64,8 @@
 %%%       has the `Tests' parameter might be useful when there are
 %%%       different groups of tests in one module which require
 %%%       different setup.
+%%%
+%%% The `{spawn,Test}' feature of eunit is used to achieve test isoloation.
 %%%
 %%% === Run all ..._test/1 functions (with default timeouts) ===
 %%% This:
