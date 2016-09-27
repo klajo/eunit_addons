@@ -1,6 +1,8 @@
 EUnit addons
 ============
 
+[![Hex pm](https://img.shields.io/hexpm/v/eunit_addons.svg?style=flat)](https://hex.pm/packages/eunit_addons)
+
 This application contains a set of addons which make it easier to work
 with EUnit tests, especially tests which require some kind of
 setup/cleanup before/after each test.
