@@ -2,7 +2,10 @@
 {application,
  eunit_addons,
  [{description,"Addons for eunit"},
-  {vsn,"0.1"},
+  {vsn,"0.2"},
   {registered,[]},
   {applications,[kernel, stdlib]},
-  {env,[]}]}.
+  {env,[]},
+  {licenses, ["BSD"]},
+  {maintainers, ["Klas Johansson"]},
+  {links, [{"Github", "https://github.com/klajo/eunit_addons"}]}]}.
