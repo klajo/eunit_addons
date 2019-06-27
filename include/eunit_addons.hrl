@@ -18,8 +18,9 @@
 -define(WITH_FUN(Fun, ForAllTimeout, PerTcTimeout, Tests),
         {timeout, ForAllTimeout,           %% timeout for all tests
          [{timeout, PerTcTimeout,          %% timeout for each test
-           [{atom_to_list(__Test),         %% label per test
-             {spawn, fun() -> Fun(__Test) end}}]}
+           {spawn,
+            {atom_to_list(__Test),         %% label per test
+             fun() -> Fun(__Test) end}}}
           || __Test <- Tests]}).
 
 -define(WITH_FUN(Fun, ForAllTimeout, PerTcTimeout),
@@ -33,15 +34,16 @@
 -define(WITH_SETUP(SetupFun, CleanupFun, ForAllTimeout, PerTcTimeout, Tests),
         {timeout, ForAllTimeout,           %% timeout for all tests
          [{timeout, PerTcTimeout,          %% timeout for each test
-           [{atom_to_list(__Test),         %% label per test
-             {spawn, fun() ->
-                             Env = SetupFun(),
-                             try
-                                 apply(?MODULE, __Test, [Env])
-                             after
-                                 CleanupFun(Env)
-                             end
-                     end}}]}
+           {spawn,
+            {atom_to_list(__Test),         %% label per test
+             fun() ->
+                     Env = SetupFun(),
+                     try
+                         apply(?MODULE, __Test, [Env])
+                     after
+                         CleanupFun(Env)
+                     end
+             end}}}
           || __Test <- Tests]}).
 
 -define(WITH_SETUP(SetupFun, CleanupFun, ForAllTimeout, PerTcTimeout),
