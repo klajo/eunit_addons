@@ -2,7 +2,6 @@
 -define(EUNIT_ADDONS_HRL, true).
 
 -include_lib("eunit/include/eunit.hrl").
--include_lib("eunit_addons/include/eunit_addons.hrl").
 
 -compile({parse_transform, eunit_addons}).
 
