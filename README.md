@@ -1,7 +1,9 @@
 EUnit addons
 ============
 
-[![Hex pm](https://img.shields.io/hexpm/v/eunit_addons.svg?style=flat)](https://hex.pm/packages/eunit_addons) [![Build Status](https://github.com/klajo/eunit_addons/workflows/Erlang%20CI/badge.svg)](https://github.com/klajo/eunit_addons/actions?query=workflow%3A%22Erlang+CI%22)
+[![Hex pm](https://img.shields.io/hexpm/v/eunit_addons.svg?style=flat)](https://hex.pm/packages/eunit_addons)
+[![Build Status](https://github.com/klajo/eunit_addons/workflows/Erlang%20CI/badge.svg)](https://github.com/klajo/eunit_addons/actions?query=workflow%3A%22Erlang+CI%22)
+[![Erlang Versions](https://img.shields.io/badge/Supported%20Erlang%2FOTP%20releases-19%20to%2023-blue)](http://www.erlang.org)
 
 This application contains a set of addons which make it easier to work
 with EUnit tests, especially tests which require some kind of
