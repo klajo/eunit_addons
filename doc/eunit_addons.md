@@ -237,10 +237,9 @@ In the above example, functions are called in this order:
 ### get_tests_with_setup/1 ###
 
 <pre><code>
-get_tests_with_setup(Module) -&gt; [{Fn, Arity}]
+get_tests_with_setup(Module::module()) -&gt; [Fn::atom()]
 </code></pre>
-
-<ul class="definitions"><li><code>Fn = atom()</code></li><li><code>Arity = integer()</code></li></ul>
+<br />
 
 Return a list of tests which require a setup (..._test/1).
 
