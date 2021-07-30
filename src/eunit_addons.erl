@@ -257,12 +257,10 @@
 %%--------------------------------------------------------------------
 
 %%--------------------------------------------------------------------
-%% @spec get_tests_with_setup(Module) -> [{Fn, Arity}]
-%%         Fn = atom()
-%%         Arity = integer()
 %% @doc Return a list of tests which require a setup (..._test/1).
 %% @end
 %%--------------------------------------------------------------------
+-spec get_tests_with_setup(module()) -> [Fn :: atom()].
 get_tests_with_setup(Module) ->
    [Fn || {Fn, Arity} <- Module:module_info(exports),
           is_test_with_setup_fn({Fn, Arity})].
@@ -270,11 +268,13 @@ get_tests_with_setup(Module) ->
 
 %%--------------------------------------------------------------------
 %% @private
-%% @spec parse_transform(Forms0, Options) -> Forms
-%%
 %% @doc Run the parse transform.
 %% @end
 %%--------------------------------------------------------------------
+-spec parse_transform(Forms0, Options) -> Forms when
+      Forms0 :: [erl_syntax:syntaxTree()],
+      Options :: [compile:option()],
+      Forms :: [erl_syntax:syntaxTree()].
 parse_transform(Forms0, _Options) ->
    ExportAttr = mk_export_attr(get_functions_to_export(Forms0)),
    Forms = insert_after_module_attr(Forms0, ExportAttr),
